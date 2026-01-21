@@ -14,15 +14,16 @@ Bo mạch hỗ trợ nạp chương trình cho ESP32-CAM (và các module ESP32 
 | Điện áp đầu vào | +5V DC (USB type B) |
 | Điện áp đầu ra | +3.3V DC, 3A |
 | Giao thức nạp | UART |
-| Tự động Boot/Reset | Qua DTR/RTS, điều khiển EN (Reset) và GPIO0 (Boot) |
-| Nút điều khiển | RESET (EN), BOOT (GPIO0) |
+| Tự động Boot/Reset | Thông qua DTR/RTS |
+| Nút điều khiển | RST, IO0 |
 
 ## Sơ đồ nối dây
 - 3V3 → 3V3.
 - GND → GND.
 - TXD của board → RX0 của ESP32-CAM.
 - RXD của board → TX0 của ESP32-CAM.
-- EN (Reset) và GPIO0 (Boot) được điều khiển tự động bởi DTR và RTS; vẫn có nút BOOT và RESET để thao tác thủ công.
+- RST của board → EN của ESP32-CAM.
+- IO0 của board → GPIO0 của ESP32-CAM.
 
 ## Hướng dẫn nạp code qua UART
 ### Cách 1: Tự động 
@@ -32,9 +33,9 @@ Bo mạch hỗ trợ nạp chương trình cho ESP32-CAM (và các module ESP32 
 4. Nhấn Upload.
 
 ### Cách 2: Thủ công 
-1. Nhấn giữ nút BOOT.
-2. Nhấn nút RESET (EN), sau đó thả RESET.
-3. Thả nút BOOT. ESP32 vào chế độ nạp, tiến hành Upload.
+1. Nhấn giữ nút IO0.
+2. Nhấn nút RST, sau đó thả RST.
+3. Thả nút IO0. ESP32 vào chế độ nạp, tiến hành Upload.
 
 ## Lưu ý thiết kế và sử dụng
 - Dây TX/RX phải bắt chéo: TX của board → RX của ESP32, RX của board → TX của ESP32.
