@@ -38,4 +38,4 @@ Bo mạch hỗ trợ nạp chương trình cho ESP32-CAM (và các module ESP32 
 3. Thả nút IO0. ESP32 vào chế độ nạp, tiến hành Upload.
 
 ## Lưu ý thiết kế và sử dụng
-- Dây TX/RX phải bắt chéo: TX của board → RX của ESP32, RX của board → TX của ESP32.
+1. Dây TX/RX phải bắt chéo: TX của board → RX của ESP32, RX của board → TX của ESP32.
